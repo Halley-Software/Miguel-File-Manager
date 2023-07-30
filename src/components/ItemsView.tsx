@@ -12,14 +12,14 @@ interface ItemsViewProps {
  * @returns
  */
 function ItemsView({items}: ItemsViewProps) {
-	return (
-		<div>
-			{items.map(item => {
-				const itemType: ItemType = item.children ? "Folder" : "File";
-				return <Item key={item.name} itemType={itemType} itemName={item.name}/>
-			})}
-		</div>
-	)
+  return (
+    <div>
+      {items.map(item => {
+        const itemType: ItemType = item.children ? "Folder" : "File";
+        return <Item key={item.name} itemType={itemType} itemName={item.name}/>
+      })}
+    </div>
+  )
 }
 
 export default ItemsView

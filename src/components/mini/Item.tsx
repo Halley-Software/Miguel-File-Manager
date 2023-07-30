@@ -2,7 +2,7 @@ export type ItemType = "File" | "Folder"
 
 interface ItemProps {
   itemType: ItemType,
-	itemName: string | undefined
+  itemName: string | undefined
 }
 
 function Item(props: ItemProps) {
