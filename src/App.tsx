@@ -1,17 +1,9 @@
-import { FileEntry, readDir } from "@tauri-apps/api/fs"
+import { BaseDirectory } from "@tauri-apps/api/path"
+import { readDir } from "@tauri-apps/api/fs"
 import ItemsView from "./components/ItemsView"
-import { useEffect, useState } from "react"
+import NavBar from "./components/NavBar"
 
-function App() {
-
-  const [items, setItems] = useState<FileEntry[]>([])
-
-  useEffect(() => {
-    const readedItems = readDir("/home/raxabi")
-
-    readedItems.then(items => setItems(items))
-  }, [])
-
+const deskDirItems = await readDir(".", { dir: BaseDirectory.Desktop })
 
   return (
     <div>
