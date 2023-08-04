@@ -5,9 +5,11 @@ import NavBar from "./components/NavBar"
 
 const deskDirItems = await readDir(".", { dir: BaseDirectory.Desktop })
 
+function App() {
   return (
     <div>
-      <ItemsView items={items}/>
+      <NavBar />
+      <ItemsView items={deskDirItems}/>
     </div>
   )
 }
